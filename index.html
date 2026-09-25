@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Properties - Premium Living</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1a56db', // Matches the blue in the design
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for fine-tuning */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2613&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.1) 100%);
+        }
+
+        .promo-bg {
+            background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2670&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .promo-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(26, 86, 219, 0.7); /* Blue overlay */
+        }
+
+        .glass-search {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- ================= HEADER ================= -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-building text-primary text-3xl"></i>
+                    <div class="flex flex-col leading-none">
+                        <span class="font-bold text-xl tracking-tight text-slate-900">SKYLINE</span>
+                        <span class="text-xs tracking-widest text-slate-500 font-medium">PROPERTIES</span>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#" class="text-primary hover:text-primary transition">Home</a>
+                    <a href="#" class="hover:text-primary transition">Properties</a>
+                    <a href="#" class="hover:text-primary transition">About Us</a>
+                    <a href="#" class="hover:text-primary transition">Services</a>
+                    <a href="#" class="hover:text-primary transition">Agents</a>
+                    <a href="#" class="hover:text-primary transition">Blog</a>
+                    <a href="#" class="hover:text-primary transition">Contact</a>
+                </nav>
+
+                <!-- Contact Button -->
+                <div class="hidden md:flex">
+                    <a href="#" class="flex items-center gap-2 text-primary font-semibold border border-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition duration-300 text-sm">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        +1 (800) 123 4567
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+            <div class="max-w-2xl">
+                <p class="text-primary font-bold text-sm tracking-wider uppercase mb-3">Premium Living, Prime Locations.</p>
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Live Above <br> the <span class="text-primary">Skyline.</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg">
+                    Luxury residences in prime locations. Elevated living, unmatched views.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <a href="#" class="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/30">
+                        Explore Properties <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-3 rounded-full font-medium transition duration-300 flex items-center gap-2 shadow-sm">
+                        Book a Consultation <i class="fa-regular fa-calendar text-primary"></i>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex items-center gap-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-white z-30"><i class="fa-solid fa-user text-primary text-sm"></i></div>
+                        <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center border-2 border-white z-20"><i class="fa-solid fa-user text-primary text-sm"></i></div>
+                        <div class="w-10 h-10 rounded-full bg-blue-300 flex items-center justify-center border-2 border-white z-10"><i class="fa-solid fa-user text-primary text-sm"></i></div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900">8,000+</h4>
+                        <p class="text-xs text-slate-500 font-medium">Premium Properties Listed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Search Bar -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mb-10">
+            <div class="glass-search rounded-2xl p-4 flex flex-col md:flex-row items-center gap-4">
+                
+                <!-- Location -->
+                <div class="flex-1 w-full border-b md:border-b-0 md:border-r border-slate-200 pb-3 md:pb-0 md:pr-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-primary"></i>
+                        <div class="w-full">
+                            <label class="block text-xs text-slate-500 font-medium">Location</label>
+                            <select class="w-full bg-transparent border-none text-sm font-semibold text-slate-800 focus:ring-0 cursor-pointer outline-none">
+                                <option>Select Location</option>
+                                <option>New York</option>
+                                <option>Miami</option>
+                                <option>Chicago</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Type -->
+                <div class="flex-1 w-full border-b md:border-b-0 md:border-r border-slate-200 pb-3 md:pb-0 md:pr-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-house text-primary"></i>
+                        <div class="w-full">
+                            <label class="block text-xs text-slate-500 font-medium">Type</label>
+                            <select class="w-full bg-transparent border-none text-sm font-semibold text-slate-800 focus:ring-0 cursor-pointer outline-none">
+                                <option>Property Type</option>
+                                <option>Penthouse</option>
+                                <option>Villa</option>
+                                <option>Apartment</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget -->
+                <div class="flex-1 w-full border-b md:border-b-0 md:border-r border-slate-200 pb-3 md:pb-0 md:pr-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-dollar-sign text-primary"></i>
+                        <div class="w-full">
+                            <label class="block text-xs text-slate-500 font-medium">Budget</label>
+                            <select class="w-full bg-transparent border-none text-sm font-semibold text-slate-800 focus:ring-0 cursor-pointer outline-none">
+                                <option>Select Budget</option>
+                                <option>$1M - $2M</option>
+                                <option>$2M - $5M</option>
+                                <option>$5M+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size -->
+                <div class="flex-1 w-full pb-3 md:pb-0 md:pr-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-ruler-combined text-primary"></i>
+                        <div class="w-full">
+                            <label class="block text-xs text-slate-500 font-medium">Size</label>
+                            <select class="w-full bg-transparent border-none text-sm font-semibold text-slate-800 focus:ring-0 cursor-pointer outline-none">
+                                <option>Select Size</option>
+                                <option>1000 - 2000 sqft</option>
+                                <option>2000 - 4000 sqft</option>
+                                <option>4000+ sqft</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Button -->
+                <div class="w-full md:w-auto mt-2 md:mt-0">
+                    <button class="w-full md:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition duration-300 flex items-center justify-center gap-2">
+                        Search Now <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRUST INDICATORS ================= -->
+    <section class="bg-white pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-primary text-2xl">
+                        <i class="fa-regular fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">500+</h3>
+                    <p class="text-sm text-slate-500 font-medium">Luxury Properties</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-primary text-2xl">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Verified</h3>
+                    <p class="text-sm text-slate-500 font-medium">Agents</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-primary text-2xl">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Best</h3>
+                    <p class="text-sm text-slate-500 font-medium">Market Price</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-primary text-2xl">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Fast</h3>
+                    <p class="text-sm text-slate-500 font-medium">Closing</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SIGNATURE PROPERTIES ================= -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-slate-300 w-16"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Signature Properties</h2>
+                    <div class="h-px bg-slate-300 w-16"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Property Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000&auto=format&fit=crop" alt="Skyline Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Featured</div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-slate-900 font-bold px-3 py-1 rounded-md text-sm shadow-sm">$2.8M</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Skyline Penthouse</h3>
+                        <p class="text-sm text-slate-500 mb-4"><i class="fa-solid fa-location-dot text-primary mr-1"></i> Downtown, New York</p>
+                        
+                        <div class="flex items-center justify-between text-xs text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-primary"></i> 4 Beds</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-primary"></i> 4 Baths</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-primary"></i> 3,200 Sqft</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-primary"></i> 28th Floor</span>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition duration-300">View Property</button>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop" alt="Rooftop Haven" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-slate-900 font-bold px-3 py-1 rounded-md text-sm shadow-sm">$3.6M</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Rooftop Haven</h3>
+                        <p class="text-sm text-slate-500 mb-4"><i class="fa-solid fa-location-dot text-primary mr-1"></i> Waterfront, Miami</p>
+                        
+                        <div class="flex items-center justify-between text-xs text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-primary"></i> 4 Beds</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-primary"></i> 5 Baths</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-primary"></i> 4,100 Sqft</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-primary"></i> Penthouse</span>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition duration-300">View Property</button>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop" alt="Executive Residence" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Luxury</div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-slate-900 font-bold px-3 py-1 rounded-md text-sm shadow-sm">$4.5M</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Executive Residence</h3>
+                        <p class="text-sm text-slate-500 mb-4"><i class="fa-solid fa-location-dot text-primary mr-1"></i> Business District, Chicago</p>
+                        
+                        <div class="flex items-center justify-between text-xs text-slate-600 mb-6 border-b border-slate-100 pb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-primary"></i> 5 Beds</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-primary"></i> 6 Baths</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-primary"></i> 5,500 Sqft</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-primary"></i> 45th Floor</span>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg transition duration-300">View Property</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRIME LOCATIONS ================= -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-slate-300 w-16"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Prime Locations</h2>
+                    <div class="h-px bg-slate-300 w-16"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Location 1 -->
+                <div class="relative rounded-xl overflow-hidden h-32 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Downtown">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
+                        <span class="text-white text-sm font-semibold">Downtown</span>
+                    </div>
+                </div>
+                <!-- Location 2 -->
+                <div class="relative rounded-xl overflow-hidden h-32 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Waterfront">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
+                        <span class="text-white text-sm font-semibold">Waterfront</span>
+                    </div>
+                </div>
+                <!-- Location 3 -->
+                <div class="relative rounded-xl overflow-hidden h-32 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Business District">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
+                        <span class="text-white text-sm font-semibold">Business District</span>
+                    </div>
+                </div>
+                <!-- Location 4 -->
+                <div class="relative rounded-xl overflow-hidden h-32 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Sky Gardens">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
+                        <span class="text-white text-sm font-semibold">Sky Gardens</span>
+                    </div>
+                </div>
+                <!-- Location 5 -->
+                <div class="relative rounded-xl overflow-hidden h-32 group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Harbor View">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-3">
+                        <span class="text-white text-sm font-semibold">Harbor View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROMO BANNER ================= -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="promo-bg rounded-3xl p-10 lg:p-16 flex flex-col items-start justify-center relative overflow-hidden">
+                <div class="relative z-10 max-w-xl">
+                    <h2 class="text-4xl font-bold text-white mb-4 leading-tight">Zero Agent Fees — <br> This Quarter Only</h2>
+                    <a href="#" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-full hover:bg-slate-100 transition duration-300">
+                        Discover Deals <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-slate-300 w-16"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Own Your Sky in 4 Steps</h2>
+                    <div class="h-px bg-slate-300 w-16"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden lg:block absolute top-10 left-[12%] right-[12%] h-0.5 border-t-2 border-dashed border-slate-300 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center relative z-10">
+                    <div class="w-20 h-20 bg-white border-2 border-blue-100 rounded-full flex items-center justify-center mb-6 text-primary text-3xl shadow-[0_0_0_8px_rgba(219,234,254,0.5)]">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Browse Listings</h3>
+                    <p class="text-sm text-slate-500 max-w-xs">Explore premium properties</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center relative z-10">
+                    <div class="w-20 h-20 bg-white border-2 border-blue-100 rounded-full flex items-center justify-center mb-6 text-primary text-3xl shadow-[0_0_0_8px_rgba(219,234,254,0.5)]">
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Schedule Viewing</h3>
+                    <p class="text-sm text-slate-500 max-w-xs">Visit in person or take a virtual tour</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center relative z-10">
+                    <div class="w-20 h-20 bg-white border-2 border-blue-100 rounded-full flex items-center justify-center mb-6 text-primary text-3xl shadow-[0_0_0_8px_rgba(219,234,254,0.5)]">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Make Offer</h3>
+                    <p class="text-sm text-slate-500 max-w-xs">Secure your dream home</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center relative z-10">
+                    <div class="w-20 h-20 bg-white border-2 border-blue-100 rounded-full flex items-center justify-center mb-6 text-primary text-3xl shadow-[0_0_0_8px_rgba(219,234,254,0.5)]">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Move In</h3>
+                    <p class="text-sm text-slate-500 max-w-xs">Start your new life in the skies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ELITE AGENTS ================= -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-slate-300 w-16"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">Our Elite Agents</h2>
+                    <div class="h-px bg-slate-300 w-16"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Agent 1 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop" alt="James Anderson" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-slate-100 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">James Anderson</h3>
+                    <p class="text-xs text-slate-500 font-medium mb-2">Luxury Property Specialist</p>
+                    <p class="text-sm text-slate-600 mb-3"><i class="fa-solid fa-phone text-primary mr-1"></i> +1 (555) 123 4567</p>
+                    <div class="flex justify-center text-yellow-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition duration-300">Contact</button>
+                </div>
+
+                <!-- Agent 2 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=256&auto=format&fit=crop" alt="Sophia Martinez" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-slate-100 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">Sophia Martinez</h3>
+                    <p class="text-xs text-slate-500 font-medium mb-2">Residential Expert</p>
+                    <p class="text-sm text-slate-600 mb-3"><i class="fa-solid fa-phone text-primary mr-1"></i> +1 (555) 234 5678</p>
+                    <div class="flex justify-center text-yellow-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition duration-300">Contact</button>
+                </div>
+
+                <!-- Agent 3 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&auto=format&fit=crop" alt="Michael Roberts" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-slate-100 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">Michael Roberts</h3>
+                    <p class="text-xs text-slate-500 font-medium mb-2">Investment Consultant</p>
+                    <p class="text-sm text-slate-600 mb-3"><i class="fa-solid fa-phone text-primary mr-1"></i> +1 (555) 345 6789</p>
+                    <div class="flex justify-center text-yellow-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <button class="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition duration-300">Contact</button>
+                </div>
+
+                <!-- Agent 4 -->
+                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=256&auto=format&fit=crop" alt="Olivia Bennett" class="w-24 h-24 rounded-full mx-auto object-cover border-4 border-slate-100 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">Olivia Bennett</h3>
+                    <p class="text-xs text-slate-500 font-medium mb-2">Relocation Specialist</p>
+                    <p class="text-sm text-slate-600 mb-3"><i class="fa-solid fa-phone text-primary mr-1"></i> +1 (555) 456 7890</p>
+                    <div class="flex justify-center text-yellow-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <button class="w-full border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 rounded-lg transition duration-300">Contact</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-slate-300 w-16"></div>
+                    <h2 class="text-3xl font-bold text-slate-900">From Our Homeowners</h2>
+                    <div class="h-px bg-slate-300 w-16"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 italic mb-6 relative z-10 pt-4">"The best real estate experience I've ever had. Professional, transparent, and truly caring."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&auto=format&fit=crop" alt="David Thompson" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">David Thompson</h4>
+                            <div class="text-yellow-400 text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 italic mb-6 relative z-10 pt-4">"They helped us find our dream home with the perfect view. Highly recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=256&auto=format&fit=crop" alt="Emily Carter" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Emily Carter</h4>
+                            <div class="text-yellow-400 text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-6 left-6"></i>
+                    <p class="text-slate-600 italic mb-6 relative z-10 pt-4">"Exceptional service and incredible attention to detail. Highly satisfied!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&auto=format&fit=crop" alt="Robert Williams" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Robert Williams</h4>
+                            <div class="text-yellow-400 text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER CTA & NEWSLETTER ================= -->
+    <section class="bg-primary relative overflow-hidden">
+        <!-- Abstract background shapes (optional, for premium feel) -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-700 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10">
+                
+                <!-- Text & Form -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl font-bold text-white mb-2">Your Sky <br> Address Awaits</h2>
+                    <p class="text-blue-100 mb-6">Find your dream home in the world's most prestigious locations.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white backdrop-blur-sm">
+                        <button type="submit" class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-slate-100 transition duration-300">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Socials -->
+                <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-end gap-6">
+                    <div class="flex items-center gap-3 text-white">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-blue-200 text-sm">Call Us Anytime</p>
+                            <p class="text-xl font-bold">+1 (800) 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition duration-300"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-primary transition duration-300"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-building text-primary text-2xl"></i>
+                        <div class="flex flex-col leading-none">
+                            <span class="font-bold text-lg tracking-tight text-white">SKYLINE</span>
+                            <span class="text-xs tracking-widest text-slate-400 font-medium">PROPERTIES</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm mb-6">Elevating lifestyles with premium properties in prime locations. Your trusted partner in luxury real estate.</p>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Properties</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Locations</a></li>
+                        <li><a href="#" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Press</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Partners</a></li>
+                        <li><a href="#" class="hover:text-primary transition">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 3 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition">FAQ</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2026 Skyline Properties. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
